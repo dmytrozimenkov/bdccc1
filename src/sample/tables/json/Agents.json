@@ -1,0 +1,15 @@
+{
+    "columns":
+    [
+      {
+        "ID"    : 1,
+        "Name"  : "id",
+        "Title" : "ID"
+      },
+      {
+        "ID"    : 2,
+        "Name"  : "name",
+        "Title" : "ФИО"
+      }
+    ]
+}

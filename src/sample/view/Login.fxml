@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import sample.*?>
+<?import javafx.scene.effect.*?>
+<?import sample.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="125.0" prefWidth="190.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.LoginController">
+   <children>
+      <Button defaultButton="true" layoutX="70.0" layoutY="84.0" mnemonicParsing="false" onAction="#login_func" text="Вход" />
+      <TextField fx:id="login" focusTraversable="false" layoutX="20.0" layoutY="14.0" prefHeight="27.0" prefWidth="150.0" promptText="id" />
+      <PasswordField fx:id="password" layoutX="20.0" layoutY="49.0" prefHeight="27.0" prefWidth="150.0" promptText="пароль" />
+   </children>
+</AnchorPane>
