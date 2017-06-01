@@ -7,12 +7,15 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Control;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.control.*;
 import org.json.*;
 import sample.addData.data.Data;
+import sample.controller.NewFieldController;
+import sample.controller.TableController;
 import sample.tables.data.Countries;
 
 /**
@@ -20,6 +23,8 @@ import sample.tables.data.Countries;
  */
 public class AddDataBuilder
 {
+
+    private WindowManager wm = WindowManager.getInstance();
 
     public ArrayList<Control> buildFields(String dataFieldsName){
         ArrayList<Control> fields = new ArrayList<>();
@@ -37,7 +42,23 @@ public class AddDataBuilder
                 case "dropdown":
                     ChoiceBox choiceBox = new ChoiceBox();
                     choiceBox.getItems().addAll(new Data().getData(fieldsArray.getJSONObject(i).getString("name")).values());
+                    choiceBox.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+                        @Override
+                        public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
+                            ((NewFieldController) wm.getController("Добавить данные в " + dataFieldsName)).setChoiceBoxValue((String) choiceBox.getItems().get((Integer) number2));                     }
+                    });
                     fields.add(choiceBox);
+                    break;
+                case "table-selector-button":
+                    JSONObject obj = fieldsArray.getJSONObject(i);
+                    Button button = new Button("Выберите " + fieldsArray.getJSONObject(i).getString("name"));
+                    button.setOnAction(new EventHandler<ActionEvent>() {
+                        @Override
+                        public void handle(ActionEvent event) {
+                            ((NewFieldController) wm.getController("Добавить данные в " + dataFieldsName)).createTableWindow(obj.getString("action"));
+                        }
+                    });
+                    fields.add(button);
                 default:
                     System.out.println("ERROR");
             }

@@ -11,7 +11,7 @@ import java.util.HashMap;
 /**
  * Created by yolo on 01.06.17.
  */
-public class FieldsCities {
+public class FieldsCities extends Data{
     public ArrayList<Cities> getCities(){
         ArrayList<Cities> cities = new ArrayList<>();
         DB db = new DB();

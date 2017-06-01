@@ -3,21 +3,16 @@
     [
       {
         "ID"    : 1,
-        "Name"  : "city_id",
-        "Title" : "ID"
-      },
-      {
-        "ID"    : 2,
         "Name"  : "city_name",
         "Title" : "Имя города"
       },
       {
-        "ID"    : 3,
+        "ID"    : 2,
         "Name"  : "country_id",
         "Title" : "Страна"
       },
       {
-        "ID"    : 4,
+        "ID"    : 3,
         "Name"  : "city_type_id",
         "Title" : "Тип города"
       }

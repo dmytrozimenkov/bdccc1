@@ -17,7 +17,8 @@
     },
     {
       "id": 4,
-      "type": "dropdown",
+      "type": "table-selector-button",
+      "action": "Cities",
       "name": "Город"
     },
     {
@@ -28,7 +29,7 @@
     {
       "id": 6,
       "type": "table-selector-button",
-      "action": "City",
+      "action": "Street",
       "name": "Улица"
     },
     {

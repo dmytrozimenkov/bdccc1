@@ -13,8 +13,9 @@ import java.sql.SQLException;
  * Created by yolo on 01.06.17.
  */
 public class Countries extends Data{
-    private StringProperty country_code;
-    private StringProperty country_name;
+    private SimpleStringProperty country_code;
+    private SimpleStringProperty country_name;
+    private SimpleStringProperty country_id;
 
     private ObservableList<Countries> data = FXCollections.observableArrayList();
 
@@ -22,7 +23,13 @@ public class Countries extends Data{
 
     }
 
-    public Countries(String country_code, String country_name){
+//    public Countries(String country_code, String country_name){
+//        this.country_code = new SimpleStringProperty(country_code);
+//        this.country_name = new SimpleStringProperty(country_name);
+//    }
+
+    public Countries(String country_id, String country_code, String country_name){
+        this.country_id = new SimpleStringProperty(country_id);
         this.country_code = new SimpleStringProperty(country_code);
         this.country_name = new SimpleStringProperty(country_name);
     }
@@ -33,7 +40,7 @@ public class Countries extends Data{
         try{
             ResultSet rs = db.query("SELECT * FROM Countries");
             while (rs.next()){
-                data.add(new Countries(Integer.toString(rs.getInt(2)), rs.getString(3)));
+                data.add(new Countries(Integer.toString(rs.getInt(1)), Integer.toString(rs.getInt(2)), rs.getString(3)));
             }
             rs.close();
             db.closeConnection();
@@ -51,7 +58,7 @@ public class Countries extends Data{
         return country_code.get();
     }
 
-    public StringProperty country_codeProperty() {
+    public SimpleStringProperty country_codeProperty() {
         return country_code;
     }
 
@@ -63,7 +70,7 @@ public class Countries extends Data{
         return country_name.get();
     }
 
-    public StringProperty country_nameProperty() {
+    public SimpleStringProperty country_nameProperty() {
         return country_name;
     }
 

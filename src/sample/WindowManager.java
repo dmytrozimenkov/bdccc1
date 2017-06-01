@@ -22,6 +22,9 @@ public class WindowManager {
 
     private static WindowManager instance;
     private HashMap<String, Stage> stages = new HashMap<>();
+    private HashMap<String, Object> controllers = new HashMap<>();
+
+    private String param;
 
     public static WindowManager getInstance(){
         if(instance == null) instance = new WindowManager();
@@ -53,7 +56,7 @@ public class WindowManager {
         }
     }
 
-    public void createTableWindow(String tableName, String title){
+    public void createTableWindow(String tableName, String title, boolean selectable){
         Stage stage = new Stage();
         try{
             if(stages.containsKey(title))
@@ -65,13 +68,25 @@ public class WindowManager {
                 stage.setTitle(title);
                 stages.put(title, stage);
                 TableController ttc = loader.getController();
-                ttc.buildTable(tableName);
+                controllers.put(title, ttc);
+                ttc.buildTable(tableName, selectable);
                 ttc.setData();
-                stage.setOnCloseRequest(new EventHandler<WindowEvent>(){
-                    public void handle(WindowEvent we) {
-                        stages.remove(title);
-                    }
-                });
+                if(selectable){
+                    stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                        public void handle(WindowEvent we) {
+
+                            ttc.removeData();
+                            stages.remove(title);
+                        }
+                    });
+                }else {
+                    stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+                        public void handle(WindowEvent we) {
+                            ttc.removeData();
+                            stages.remove(title);
+                        }
+                    });
+                }
                 stage.show();
             }
         } catch(IOException ex){
@@ -91,6 +106,7 @@ public class WindowManager {
                 stage.setTitle(title);
                 stages.put(title, stage);
                 NewFieldController nfc = loader.getController();
+                controllers.put(title, nfc);
                 nfc.createFields(dataFieldsName);
                 stage.setOnCloseRequest(new EventHandler<WindowEvent>(){
                     public void handle(WindowEvent we) {
@@ -120,6 +136,11 @@ public class WindowManager {
         return stages.get(title);
     }
 
+    public boolean isExists(String title){
+        if(getStage(title) != null) return true;
+        else return false;
+    }
+
     public void removeStage(String title){
         stages.remove(title);
     }
@@ -129,5 +150,17 @@ public class WindowManager {
             stage.close();
         }
         createWindow("view/Login.fxml", "Вход", 190, 125);
+    }
+
+    public Object getController(String title){
+        return controllers.get(title);
+    }
+
+    public void setParam(String param){
+        this.param = param;
+    }
+
+    public String getParam(){
+        return param;
     }
 }

@@ -1,6 +1,7 @@
 package sample.addData.data;
 
 import sample.DB;
+import sample.tables.data.Countries;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,14 +23,16 @@ public class FieldsCountries extends Data{
         db.closeConnection();
     }
 
-    public HashMap<Integer, String> getCountries(){
-        HashMap<Integer, String> countries = new HashMap();
+    public ArrayList<Countries> getCountries(){
+        ArrayList<Countries> countries = new ArrayList<>();
         DB db = new DB();
         db.openConnection();
         try{
-            ResultSet rs = db.query("SELECT country_id, country_name FROM Countries");
+            ResultSet rs = db.query("SELECT country_id, country_code, country_name FROM Countries");
             while(rs.next()){
-                countries.put(rs.getInt(1), rs.getString(2));
+                countries.add(new Countries(Integer.toString(rs.getInt(1)),
+                                            Integer.toString(rs.getInt(2)),
+                                            rs.getString(3)));
             }
         } catch (SQLException ex){
             ex.printStackTrace();
