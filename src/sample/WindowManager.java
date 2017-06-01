@@ -10,6 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
+import sample.controller.NewFieldController;
 import sample.controller.TableController;
 import sample.controller.TestTableController;
 
@@ -52,7 +53,7 @@ public class WindowManager {
         }
     }
 
-    public void createTableWindow(String tableName, String title, int cols){
+    public void createTableWindow(String tableName, String title){
         Stage stage = new Stage();
         try{
             if(stages.containsKey(title))
@@ -64,7 +65,33 @@ public class WindowManager {
                 stage.setTitle(title);
                 stages.put(title, stage);
                 TableController ttc = loader.getController();
-                ttc.buildTable(tableName, cols);
+                ttc.buildTable(tableName);
+                ttc.setData();
+                stage.setOnCloseRequest(new EventHandler<WindowEvent>(){
+                    public void handle(WindowEvent we) {
+                        stages.remove(title);
+                    }
+                });
+                stage.show();
+            }
+        } catch(IOException ex){
+            ex.printStackTrace();
+        }
+    }
+
+    public void createAddDataWindow(String dataFieldsName, String title){
+        Stage stage = new Stage();
+        try{
+            if(stages.containsKey(title))
+                createAlert("Окно '" + title + "' уже открыто", "", Alert.AlertType.WARNING);
+            else {
+                FXMLLoader loader = new FXMLLoader();
+                Parent parent = loader.load(getClass().getResource("view/NewField.fxml").openStream());
+                stage.setScene(new Scene(parent));
+                stage.setTitle(title);
+                stages.put(title, stage);
+                NewFieldController nfc = loader.getController();
+                nfc.createFields(dataFieldsName);
                 stage.setOnCloseRequest(new EventHandler<WindowEvent>(){
                     public void handle(WindowEvent we) {
                         stages.remove(title);
@@ -91,6 +118,10 @@ public class WindowManager {
 
     public Stage getStage(String title){
         return stages.get(title);
+    }
+
+    public void removeStage(String title){
+        stages.remove(title);
     }
 
     public void closeAll(){

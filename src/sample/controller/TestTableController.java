@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import sample.TableBuilder;
+import sample.WindowManager;
 import sample.tables.data.Agents;
 import sample.tables.data.Data;
 
@@ -16,11 +17,14 @@ import java.util.ResourceBundle;
 public class TestTableController {
     @FXML
     private TableView tableView;
+    private WindowManager windowManager = WindowManager.getInstance();
 
     private ObservableList<?> data = FXCollections.observableArrayList();
 
-    public void add(){
+    private String tableName;
 
+    public void add(){
+        windowManager.createAddDataWindow("date" + tableName, "Добавить данные в " + tableName);
     }
 
     public void remove() {
@@ -32,6 +36,7 @@ public class TestTableController {
     }
 
     public void buildTable(String tableName, int columns){
+        this.tableName = tableName;
         tableView.getColumns().addAll(new TableBuilder().buildTable(tableName, columns));
     }
 }

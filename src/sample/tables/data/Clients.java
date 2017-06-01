@@ -9,9 +9,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Clients extends Data{
+
     private SimpleStringProperty id;
     private SimpleStringProperty name;
-    private SimpleStringProperty passport;
+    private SimpleStringProperty email;
 
     private ObservableList<Clients> data = FXCollections.observableArrayList();
 
@@ -19,10 +20,10 @@ public class Clients extends Data{
 
     }
 
-    public Clients(int id, String name, String passport){
-        this.id = new SimpleStringProperty(Integer.toString(id));
+    public Clients(String id, String name, String email){
+        this.id = new SimpleStringProperty(id);
         this.name = new SimpleStringProperty(name);
-        this.passport = new SimpleStringProperty(passport);
+        this.email = new SimpleStringProperty(email);
     }
 
     protected void getTableData(){
@@ -31,10 +32,10 @@ public class Clients extends Data{
         try{
             ResultSet rs = db.query("SELECT * FROM Clients");
             while(rs.next()){
-                data.add(new Clients(rs.getInt(1), rs.getString(2)
-                        + " " + rs.getString(3)
-                        + " " + rs.getString(4),
+                System.out.println(Integer.toString(rs.getInt(1)));
+                data.add(new Clients(Integer.toString(rs.getInt(1)), rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4),
                         rs.getString(5)));
+
             }
             rs.close();
             db.closeConnection();
@@ -43,7 +44,7 @@ public class Clients extends Data{
         }
     }
 
-    public ObservableList<Clients> getData(){
+    public ObservableList<Clients> getData() {
         getTableData();
         return data;
     }
@@ -72,15 +73,17 @@ public class Clients extends Data{
         this.name.set(name);
     }
 
-    public String getPassport() {
-        return passport.get();
+
+    public String getEmail() {
+        return email.get();
     }
 
-    public SimpleStringProperty passportProperty() {
-        return passport;
+    public SimpleStringProperty emailProperty() {
+        return email;
     }
 
-    public void setPassport(String passport) {
-        this.passport.set(passport);
+    public void setEmail(String email) {
+        this.email.set(email);
     }
+
 }

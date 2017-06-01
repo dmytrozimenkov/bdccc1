@@ -1,0 +1,25 @@
+{
+  "fields":
+  [
+    {
+      "id": 1,
+      "type": "label",
+      "name": "Код страны"
+    },
+    {
+      "id": 2,
+      "type": "text_field",
+      "name": "Код страны"
+    },
+    {
+      "id": 3,
+      "type": "label",
+      "name": "Название страны"
+    },
+    {
+      "id": 4,
+      "type": "text_field",
+      "name": "Название страны"
+    }
+  ]
+}

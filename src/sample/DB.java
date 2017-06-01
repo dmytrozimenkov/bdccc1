@@ -11,7 +11,7 @@ public class DB {
     private Connection  con;
     private Statement   stmt;
 
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/insurance1";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/insurance1?useUnicode=true&characterEncoding=utf8";
     private static final String DB_USER = "root";
     private static final String DB_PASS = "";
 
@@ -53,6 +53,11 @@ public class DB {
             }
         }
         return rs;
+    }
+
+    public void ins_query(String query) throws SQLException {
+            stmt = con.createStatement();
+            stmt.executeUpdate(query);
     }
 
     public void closeConnection(){

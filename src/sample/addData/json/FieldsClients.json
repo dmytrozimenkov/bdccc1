@@ -1,0 +1,50 @@
+{
+  "fields":
+  [
+    {
+      "id": 1,
+      "type": "label",
+      "name": "Имя"
+    },
+    {
+      "id": 2,
+      "type": "text_field",
+      "name": "Имя"
+    },
+    {
+      "id": 3,
+      "type": "label",
+      "name": "Фамилия"
+    },
+    {
+      "id": 4,
+      "type": "text_field",
+      "name": "Фамилия"
+    },
+    {
+      "id": 5,
+      "type": "label",
+      "name": "Отчество"
+    },
+    {
+      "id": 6,
+      "type": "text_field",
+      "name": "Отчество"
+    },
+    {
+      "id": 7,
+      "type": "label",
+      "name": "E-mail"
+    },
+    {
+      "id": 8,
+      "type": "text_field",
+      "name": "E-mail"
+    },
+    {
+      "id": 9,
+      "type": "label",
+      "name": "Адрес"
+    }
+  ]
+}

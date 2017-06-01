@@ -3,36 +3,26 @@
     [
       {
         "ID"    : 1,
-        "Name"  : "client_id",
+        "Name"  : "id",
         "Title" : "ID"
       },
       {
         "ID"    : 2,
-        "Name"  : "first_name",
+        "Name"  : "name",
         "Title" : "Имя"
       },
       {
         "ID"    : 3,
-        "Name"  : "second_name",
-        "Title" : "Отчество"
-      },
-      {
-        "ID"    : 4,
-        "Name"  : "surname",
-        "Title" : "Фамилия"
-      },
-      {
-        "ID"    : 5,
         "Name"  : "email",
         "Title" : "E-mail"
       },
       {
-        "ID"    : 6,
+        "ID"    : 4,
         "Name"  : "adress_id",
         "Title" : "Адрес"
       },
       {
-        "ID"    : 7,
+        "ID"    : 5,
         "Name"  : "phone_id",
         "Title" : "Телефон"
       }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -24,6 +25,11 @@
             <Button mnemonicParsing="false" onAction="#edit" prefHeight="27.0" text="EDIT">
                <HBox.margin>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </HBox.margin>
+            </Button>
+            <Button alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#refresh" prefHeight="27.0" text="REFRESH" textAlignment="CENTER">
+               <HBox.margin>
+                  <Insets left="308.0" top="2.0" />
                </HBox.margin>
             </Button>
          </children>

@@ -5,19 +5,24 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import sample.TableBuilder;
+import sample.WindowManager;
 import sample.tables.data.Agents;
 import sample.tables.data.Clients;
+import sample.tables.data.Countries;
 
 public class TableController {
 
     @FXML
     private TableView tableView;
     private TableColumn[] cols;
-    private ObservableList data;
+    public ObservableList data;
     private String tableName;
+    private WindowManager windowManager = WindowManager.getInstance();
+
+
 
     public void add(){
-
+        windowManager.createAddDataWindow(tableName, "Добавить данные в " + tableName);
     }
 
     public void remove() {
@@ -28,7 +33,15 @@ public class TableController {
 
     }
 
-    public void buildTable(String tableName, int columns){
+    public void refresh(){
+        tableView.getItems().clear();
+        data.removeAll(data);
+        buildTable(tableName);
+        tableView.setItems(data);
+    }
+
+
+    public void buildTable(String tableName){
         this.tableName = tableName;
         switch(tableName){
             case "Agents":
@@ -39,9 +52,15 @@ public class TableController {
                 data = new Clients().getData();
                 cols = new TableBuilder<Clients>().buildTable("Clients", 3);
                 break;
+            case "Countries":
+                data = new Countries().getData();
+                cols = new TableBuilder<Countries>().buildTable("Countries", 2);
             default:
                 System.out.println("IDI NAHUY");
         }
+    }
+
+    public void setData(){
         tableView.setItems(data);
         tableView.getColumns().addAll(cols);
     }

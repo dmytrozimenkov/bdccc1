@@ -30,7 +30,6 @@ public class Agents extends Data{
         try {
             ResultSet rsTest = db.query("SELECT * FROM Agents");
             while (rsTest.next()) {
-                System.out.println(rsTest.getInt(1) + " " + rsTest.getString(2) + " " + rsTest.getString(3));
                 data.add(new Agents(rsTest.getInt(1), rsTest.getString(2) + " " + rsTest.getString(3)));
             }
             rsTest.close();
