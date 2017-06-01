@@ -1,0 +1,16 @@
+{
+    "columns":
+    [
+      {
+        "ID"    : 1,
+        "Name"  : "body_part_id",
+        "Title" : "ID"
+      },
+      {
+        "ID"    : 2,
+        "Name"  : "body_part_name",
+        "Title" : "Имя органа"
+      }
+
+    ]
+}

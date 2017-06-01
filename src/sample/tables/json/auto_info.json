@@ -1,0 +1,56 @@
+{
+    "columns":
+    [
+      {
+        "ID"    : 1,
+        "Name"  : "car_prod_year",
+        "Title" : "Год выпуска машины"
+      },
+      {
+        "ID"    : 2,
+        "Name"  : "car_manufact",
+        "Title" : "Марка машины"
+      },
+      {
+        "ID"    : 3,
+        "Name"  : "car_model",
+        "Title" : "Модель машины"
+      },
+      {
+        "ID"    : 4,
+        "Name"  : "car_color",
+        "Title" : "Цвет машины"
+      },
+      {
+        "ID"    : 5,
+        "Name"  : "car_number",
+        "Title" : "Номер машины"
+      },
+      {
+        "ID"    : 6,
+        "Name"  : "car_mileage",
+        "Title" : "Пробег"
+      }
+    ,
+      {
+        "ID"    : 7,
+        "Name"  : "car_vinn_number",
+        "Title" : "Номер кузова"
+      }
+    ,
+      {
+        "ID"    : 8,
+        "Name"  : "date_added",
+        "Title" : "Дата добавления"
+      }
+    ,
+      {
+        "ID"    : 9,
+        "Name"  : "owner_id",
+        "Title" : "ID владельца"
+      }
+
+
+
+    ]
+}

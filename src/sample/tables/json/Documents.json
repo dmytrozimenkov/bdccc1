@@ -1,0 +1,22 @@
+{
+    "columns":
+    [
+
+      {
+        "ID"    : 1,
+        "Name"  : "doc_id",
+        "Title" : "ID"
+      },
+      {
+        "ID"    : 2,
+        "Name"  : "doc_type_id",
+        "Title" : "Тип документа"
+      },
+      {
+        "ID"    : 3,
+        "Name"  : "client_id",
+        "Title" : "Клиент"
+      }
+
+    ]
+}

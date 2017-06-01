@@ -1,0 +1,23 @@
+{
+    "columns":
+    [
+
+      {
+        "ID"    : 1,
+        "Name"  : "phone_id",
+        "Title" : "ID"
+      },
+      {
+        "ID"    : 2,
+        "Name"  : "contry_code",
+        "Title" : "Код страны"
+      },
+      {
+        "ID"    : 3,
+        "Name"  : "phone_number",
+        "Title" : "Номер телефона"
+      }
+    
+
+    ]
+}

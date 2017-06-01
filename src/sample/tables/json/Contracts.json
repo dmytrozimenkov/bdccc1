@@ -1,0 +1,56 @@
+{
+    "columns":
+    [
+      {
+        "ID"    : 1,
+        "Name"  : "contract_id",
+        "Title" : "ID"
+      },
+      {
+        "ID"    : 2,
+        "Name"  : "policy_type_id",
+        "Title" : "Тип страховки"
+      },
+      {
+        "ID"    : 3,
+        "Name"  : "ins_amount_uah",
+        "Title" : "Сумма страхования"
+      },
+      {
+        "ID"    : 4,
+        "Name"  : "contract_acc_date",
+        "Title" : "Дата начала страховки"
+      },
+      {
+        "ID"    : 5,
+        "Name"  : "contract_exp_date",
+        "Title" : "Дата окончания страховки"
+      },
+      {
+        "ID"    : 6,
+        "Name"  : "client_id",
+        "Title" : "Клиент"
+      }
+    ,
+      {
+        "ID"    : 7,
+        "Name"  : "agent_id",
+        "Title" : "Агент"
+      }
+    ,
+      {
+        "ID"    : 8,
+        "Name"  : "status_id",
+        "Title" : "Статус"
+      }
+    ,
+      {
+        "ID"    : 9,
+        "Name"  : "doc_id",
+        "Title" : "ID документа"
+      }
+
+
+
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "columns":
+    [
+      {
+        "ID"    : 1,
+        "Name"  : "prop_police_id",
+        "Title" : "ID"
+      },
+      {
+        "ID"    : 2,
+        "Name"  : "adress_id",
+        "Title" : "Адрес"
+      },
+      {
+        "ID"    : 3,
+        "Name"  : "prop_area",
+        "Title" : "Площадь"
+      },
+      {
+        "ID"    : 4,
+        "Name"  : "owner_id",
+        "Title" : "Владелец"
+      },
+      {
+        "ID"    : 5,
+        "Name"  : "prop_est_val_usd",
+        "Title" : "Оценочная стоимость"
+      }
+
+
+
+    ]
+}

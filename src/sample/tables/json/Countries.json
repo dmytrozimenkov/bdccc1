@@ -1,0 +1,23 @@
+{
+    "columns":
+    [
+      {
+        "ID"    : 1,
+        "Name"  : "country_id",
+        "Title" : "ID"
+      },
+      {
+        "ID"    : 2,
+        "Name"  : "country_code",
+        "Title" : "Код страны"
+      }
+    ,
+      {
+        "ID"    : 3,
+        "Name"  : "country_name",
+        "Title" : "Имя страны"
+      }
+
+
+    ]
+}

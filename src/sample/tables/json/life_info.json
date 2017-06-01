@@ -1,0 +1,28 @@
+{
+    "columns":
+    [
+
+      {
+        "ID"    : 1,
+        "Name"  : "life_info_id",
+        "Title" : "ID"
+      },
+      {
+        "ID"    : 2,
+        "Name"  : "body_part_id",
+        "Title" : "Орган"
+      },
+      {
+        "ID"    : 3,
+        "Name"  : "owner_id",
+        "Title" : "Клиент"
+      }
+    ,
+      {
+        "ID"    : 4,
+        "Name"  : "date_added",
+        "Title" : "Дата"
+      }
+
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "columns":
+    [
+      {
+        "ID"    : 1,
+        "Name"  : "city_id",
+        "Title" : "ID"
+      },
+      {
+        "ID"    : 2,
+        "Name"  : "city_name",
+        "Title" : "Имя города"
+      },
+      {
+        "ID"    : 3,
+        "Name"  : "country_id",
+        "Title" : "Страна"
+      },
+      {
+        "ID"    : 4,
+        "Name"  : "city_type_id",
+        "Title" : "Тип города"
+      }
+
+
+    ]
+}

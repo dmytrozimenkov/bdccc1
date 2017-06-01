@@ -1,0 +1,17 @@
+{
+    "columns":
+    [
+      {
+        "ID"    : 1,
+        "Name"  : "city_type_id",
+        "Title" : "ID"
+      },
+      {
+        "ID"    : 2,
+        "Name"  : "name",
+        "Title" : "Тип города"
+      }
+
+
+    ]
+}

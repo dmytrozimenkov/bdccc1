@@ -3,18 +3,40 @@
     [
       {
         "ID"    : 1,
-        "Name"  : "id",
+        "Name"  : "client_id",
         "Title" : "ID"
       },
       {
         "ID"    : 2,
-        "Name"  : "name",
-        "Title" : "ФИО"
+        "Name"  : "first_name",
+        "Title" : "Имя"
       },
       {
         "ID"    : 3,
-        "Name"  : "passport",
-        "Title" : "С/Н Паспорта"
+        "Name"  : "second_name",
+        "Title" : "Отчество"
+      },
+      {
+        "ID"    : 4,
+        "Name"  : "surname",
+        "Title" : "Фамилия"
+      },
+      {
+        "ID"    : 5,
+        "Name"  : "email",
+        "Title" : "E-mail"
+      },
+      {
+        "ID"    : 6,
+        "Name"  : "adress_id",
+        "Title" : "Адрес"
+      },
+      {
+        "ID"    : 7,
+        "Name"  : "phone_id",
+        "Title" : "Телефон"
       }
+
+
     ]
 }

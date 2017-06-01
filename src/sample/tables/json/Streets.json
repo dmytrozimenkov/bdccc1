@@ -1,0 +1,23 @@
+{
+    "columns":
+    [
+
+      {
+        "ID"    : 1,
+        "Name"  : "street_id",
+        "Title" : "ID"
+      },
+      {
+        "ID"    : 2,
+        "Name"  : "street_name",
+        "Title" : "Название улицы"
+      },
+      {
+        "ID"    : 3,
+        "Name"  : "city_id",
+        "Title" : "Город"
+      }
+    
+
+    ]
+}
