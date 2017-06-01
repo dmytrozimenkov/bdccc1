@@ -10,16 +10,12 @@
    <children>
       <Hyperlink layoutX="42.0" layoutY="105.0" onAction="#agents" text="Авто" underline="true" />
       <Hyperlink layoutX="42.0" layoutY="130.0" onAction="#clients" text="Органы" underline="true" />
-      <Button layoutX="49.0" layoutY="224.0" mnemonicParsing="false" onAction="#exit" text="Выйти" />
+      <Button layoutX="49.0" layoutY="287.0" mnemonicParsing="false" onAction="#exit" text="Выйти" />
       <Hyperlink layoutX="41.0" layoutY="30.0" onAction="#agents" text="Договоры" underline="true" />
       <Hyperlink layoutX="41.0" layoutY="55.0" onAction="#agents" text="Документы" underline="true" />
       <Hyperlink layoutX="42.0" layoutY="80.0" onAction="#agents" text="Недвижимость" underline="true" />
       <Hyperlink layoutX="42.0" layoutY="155.0" onAction="#clients" text="Клиенты" underline="true" />
-      <ImageView fitHeight="500.0" fitWidth="500.0" layoutX="258.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="http://i.imgur.com/VmK0Xeb.png" />
-         </image>
-      </ImageView>
       <Hyperlink layoutX="42.0" layoutY="180.0" onAction="#countries" text="Страны" underline="true" />
+      <Hyperlink layoutX="42.0" layoutY="205.0" onAction="#adress" text="Адреса" underline="true" />
    </children>
 </AnchorPane>

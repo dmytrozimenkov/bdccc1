@@ -6,6 +6,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import sample.TableBuilder;
 import sample.WindowManager;
+import sample.tables.data.Adress;
 import sample.tables.data.Agents;
 import sample.tables.data.Clients;
 import sample.tables.data.Countries;
@@ -55,6 +56,9 @@ public class TableController {
             case "Countries":
                 data = new Countries().getData();
                 cols = new TableBuilder<Countries>().buildTable("Countries", 2);
+            case "Adress":
+                data = new Adress().getData();
+                cols = new TableBuilder<Adress>().buildTable("Adress", 4);
             default:
                 System.out.println("IDI NAHUY");
         }

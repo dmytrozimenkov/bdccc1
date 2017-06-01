@@ -9,7 +9,8 @@ import java.sql.*;
 public class DB {
 
     private Connection  con;
-    private Statement   stmt;
+    public Statement   stmt;
+    public Statement   stmt2;
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/insurance1?useUnicode=true&characterEncoding=utf8";
     private static final String DB_USER = "root";
@@ -35,12 +36,25 @@ public class DB {
             try {
                 con         = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
                 stmt        = con.createStatement();
+                stmt2       = con.createStatement();
                 connection  = true;
                 System.out.println("Successfully connected");
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
         } else System.out.println("Connection is already established");
+    }
+
+    public ResultSet secondQuery(String query){
+        ResultSet rs = null;
+        if(connection){
+            try{
+                rs = stmt2.executeQuery(query);
+            } catch (SQLException ex){
+                ex.printStackTrace();
+            }
+        }
+        return rs;
     }
 
     public ResultSet query(String query){

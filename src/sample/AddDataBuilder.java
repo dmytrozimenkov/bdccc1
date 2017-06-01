@@ -7,10 +7,13 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import org.json.*;
+import sample.addData.data.Data;
+import sample.tables.data.Countries;
 
 /**
  * Created by yolo on 01.06.17.
@@ -31,8 +34,12 @@ public class AddDataBuilder
                 case "text_field":
                     fields.add(new TextField(fieldsArray.getJSONObject(i).getString("name")));
                     break;
+                case "dropdown":
+                    ChoiceBox choiceBox = new ChoiceBox();
+                    choiceBox.getItems().addAll(new Data().getData(fieldsArray.getJSONObject(i).getString("name")).values());
+                    fields.add(choiceBox);
                 default:
-                    System.out.println("IDI NAHUY");
+                    System.out.println("ERROR");
             }
         }
         return fields;

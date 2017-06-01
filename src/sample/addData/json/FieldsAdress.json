@@ -1,0 +1,46 @@
+{
+  "fields":[
+    {
+      "id": 1,
+      "type": "label",
+      "name": "Страна"
+    },
+    {
+      "id": 2,
+      "type": "dropdown",
+      "name": "Страна"
+    },
+    {
+      "id": 3,
+      "type": "label",
+      "name": "Город"
+    },
+    {
+      "id": 4,
+      "type": "dropdown",
+      "name": "Город"
+    },
+    {
+      "id": 5,
+      "type": "label",
+      "name": "Улица"
+    },
+    {
+      "id": 6,
+      "type": "table-selector-button",
+      "action": "City",
+      "name": "Улица"
+    },
+    {
+      "id": 7,
+      "type": "label",
+      "name": "Дом"
+    },
+    {
+      "id": 8,
+      "type": "table-selector-button",
+      "action": "House",
+      "name": "Дом"
+    }
+  ]
+}
